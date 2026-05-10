@@ -26,9 +26,9 @@
                     <span class="font-bold text-xl text-slate-800 tracking-tight">AI Traffic Insight</span>
                 </div>
                 <div class="flex space-x-8">
-                    <button onclick="showPage('overview')" id="nav-overview" class="nav-link font-medium text-slate-600 hover:text-blue-600 transition-colors py-5 active">Overview</button>
-                    <button onclick="showPage('au')" id="nav-au" class="nav-link font-medium text-slate-600 hover:text-blue-600 transition-colors py-5">Australia (AU)</button>
+                    <button onclick="showPage('au')" id="nav-au" class="nav-link font-medium text-slate-600 hover:text-blue-600 transition-colors py-5 active">Australia (AU)</button>
                     <button onclick="showPage('us')" id="nav-us" class="nav-link font-medium text-slate-600 hover:text-blue-600 transition-colors py-5">United States (US)</button>
+                    <button onclick="showPage('overview')" id="nav-overview" class="nav-link font-medium text-slate-600 hover:text-blue-600 transition-colors py-5">Global Overview</button>
                 </div>
             </div>
         </div>
@@ -36,74 +36,18 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
-        <!-- OVERVIEW PAGE -->
-        <div id="page-overview" class="page-content space-y-8">
-            <header class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div>
-                    <h1 class="text-3xl font-bold text-slate-900">The Big Picture</h1>
-                    <p class="text-slate-500">Global AI Referral Performance • May 1–9, 2026</p>
-                </div>
-                <div class="flex items-center space-x-2 text-sm font-medium text-green-600 bg-green-50 px-3 py-1 rounded-full">
-                    <span class="relative flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    <span>Live Data Report</span>
-                </div>
+        <!-- AUSTRALIA PAGE (Start) -->
+        <div id="page-au" class="page-content space-y-8">
+            <header>
+                <h1 class="text-3xl font-bold text-slate-900">Australia (AU) Analysis</h1>
+                <p class="text-slate-500">Market Stronghold & Content Success • May 1–9, 2026</p>
             </header>
 
-            <!-- Stats Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-card p-6 rounded-2xl shadow-sm">
-                    <p class="text-sm font-medium text-slate-500">Total AI Sessions</p>
-                    <h2 class="text-4xl font-bold text-slate-900 mt-1">1,618</h2>
-                    <div class="mt-4 flex items-center text-sm text-slate-600">
-                        <span class="font-semibold text-blue-600">63.8%</span>&nbsp;from AU market
-                    </div>
-                </div>
-                <div class="glass-card p-6 rounded-2xl shadow-sm">
-                    <p class="text-sm font-medium text-slate-500">Dominant AI Platform</p>
-                    <h2 class="text-4xl font-bold text-slate-900 mt-1">ChatGPT</h2>
-                    <div class="mt-4 flex items-center text-sm text-slate-600">
-                        <span class="font-semibold text-blue-600">97%</span>&nbsp;Market Share
-                    </div>
-                </div>
-                <div class="glass-card p-6 rounded-2xl shadow-sm">
-                    <p class="text-sm font-medium text-slate-500">Product Page Entry</p>
-                    <h2 class="text-4xl font-bold text-slate-900 mt-1">78%</h2>
-                    <div class="mt-4 flex items-center text-sm text-slate-600">
-                        Average across AU & US
-                    </div>
-                </div>
-            </div>
-
-            <!-- Chart Section -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="glass-card p-6 rounded-2xl shadow-sm">
-                    <h3 class="font-semibold text-slate-800 mb-4">Traffic by Region</h3>
-                    <div class="h-64">
-                        <canvas id="regionChart"></canvas>
-                    </div>
-                </div>
-                <div class="glass-card p-6 rounded-2xl shadow-sm">
-                    <h3 class="font-semibold text-slate-800 mb-4">Landing Page Distribution</h3>
-                    <div class="h-64">
-                        <canvas id="pageTypeChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- AUSTRALIA PAGE -->
-        <div id="page-au" class="page-content hidden space-y-8">
-            <div>
-                <h1 class="text-3xl font-bold text-slate-900">Australia (AU) Report</h1>
-                <p class="text-slate-500">Market Stronghold Analysis</p>
-            </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="glass-card p-6 rounded-2xl shadow-sm">
-                    <h3 class="font-bold text-lg text-slate-800 mb-4 border-b pb-2">🚲 Top Product Triggers</h3>
+                <div class="glass-card p-6 rounded-2xl shadow-sm border-l-4 border-blue-500">
+                    <h3 class="font-bold text-lg text-slate-800 mb-4 flex items-center">
+                        <span class="mr-2">🚲</span> Top Product Triggers
+                    </h3>
                     <ul class="space-y-4">
                         <li class="flex justify-between items-center">
                             <span class="text-slate-700 font-medium">Polygon Siskiu D5</span>
@@ -119,36 +63,40 @@
                         </li>
                     </ul>
                     <div class="mt-6 p-4 bg-blue-50 rounded-lg text-sm text-blue-800">
-                        <strong>Insight:</strong> 78.8% of AU AI traffic goes straight to product pages, bypassing the home page.
+                        <strong>Insight:</strong> Product-led entry is dominant (78.8%), but users are researching value-for-money models.
                     </div>
                 </div>
-                <div class="glass-card p-6 rounded-2xl shadow-sm">
-                    <h3 class="font-bold text-lg text-slate-800 mb-4 border-b pb-2">📝 Content & Blogs</h3>
+                <div class="glass-card p-6 rounded-2xl shadow-sm border-l-4 border-green-500">
+                    <h3 class="font-bold text-lg text-slate-800 mb-4 flex items-center">
+                        <span class="mr-2">📝</span> Blog & Content Performance
+                    </h3>
                     <div class="space-y-3">
-                        <p class="text-sm text-slate-600">AU is seeing the highest educational engagement.</p>
                         <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
                             <p class="text-sm font-semibold text-slate-800">Best Commuter Electric Bikes</p>
-                            <p class="text-xs text-slate-500">Top performing guide this week</p>
+                            <p class="text-xs text-slate-500">Top Research Topic</p>
                         </div>
                         <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
-                            <p class="text-sm font-semibold text-slate-800">Maintenance Guides</p>
-                            <p class="text-xs text-slate-500">Users asking about Dropper Posts & Valves</p>
+                            <p class="text-sm font-semibold text-slate-800">Maintenance: Dropper Posts</p>
+                            <p class="text-xs text-slate-500">Technical engagement via AI</p>
                         </div>
+                        <p class="text-xs text-slate-500 italic mt-2">*AU has 8x higher blog engagement than US via AI.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- US PAGE -->
+        <!-- UNITED STATES PAGE (Second) -->
         <div id="page-us" class="page-content hidden space-y-8">
-            <div>
-                <h1 class="text-3xl font-bold text-slate-900">United States (US) Report</h1>
-                <p class="text-slate-500">Growth & Performance Analysis</p>
-            </div>
+            <header>
+                <h1 class="text-3xl font-bold text-slate-900">United States (US) Analysis</h1>
+                <p class="text-slate-500">Performance Focus & Growth Opportunity</p>
+            </header>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="glass-card p-6 rounded-2xl shadow-sm">
-                    <h3 class="font-bold text-lg text-slate-800 mb-4 border-b pb-2">🚲 Top Product Triggers</h3>
+                <div class="glass-card p-6 rounded-2xl shadow-sm border-l-4 border-indigo-500">
+                    <h3 class="font-bold text-lg text-slate-800 mb-4 flex items-center">
+                        <span class="mr-2">🚀</span> High-Intent Products
+                    </h3>
                     <ul class="space-y-4">
                         <li class="flex justify-between items-center">
                             <span class="text-slate-700 font-medium">Polygon Siskiu T8 (2024)</span>
@@ -159,22 +107,66 @@
                             <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold">25 Sessions</span>
                         </li>
                         <li class="flex justify-between items-center">
-                            <span class="text-slate-700 font-medium">Polygon Siskiu D5</span>
-                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold">20 Sessions</span>
+                            <span class="text-slate-700 font-medium">Polygon Strattos S5</span>
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold">19 Sessions</span>
                         </li>
                     </ul>
-                    <div class="mt-6 p-4 bg-indigo-50 rounded-lg text-sm text-indigo-800">
-                        <strong>Insight:</strong> Product-led entry is very strong here at 77.6%. High intent on specific performance models.
+                </div>
+                <div class="glass-card p-6 rounded-2xl shadow-sm bg-blue-600 text-white">
+                    <h3 class="font-bold text-lg mb-4 flex items-center">
+                        <span class="mr-2">💡</span> Strategic Opportunity
+                    </h3>
+                    <div class="space-y-4">
+                        <p class="text-blue-100 text-sm">US AI traffic is <strong>99% product-focused</strong>. We are missing the research-phase traffic we see in AU.</p>
+                        <div class="bg-blue-700 p-4 rounded-xl border border-blue-500">
+                            <p class="text-sm font-semibold mb-1">Recommended Action:</p>
+                            <p class="text-xs italic">"Deploy US-specific versions of our top-performing AU blogs to capture 'Best Trail Bike' queries."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERVIEW PAGE (Summary) -->
+        <div id="page-overview" class="page-content hidden space-y-8">
+            <header class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold text-slate-900">Global Overview</h1>
+                    <p class="text-slate-500">Summary of Combined Performance</p>
+                </div>
+                <div class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold">
+                    May 1–9 Recap
+                </div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl shadow-sm">
+                    <p class="text-sm font-medium text-slate-500">Total Global AI Sessions</p>
+                    <h2 class="text-4xl font-bold text-slate-900 mt-1">1,618</h2>
+                </div>
+                <div class="glass-card p-6 rounded-2xl shadow-sm">
+                    <p class="text-sm font-medium text-slate-500">Top Platform</p>
+                    <h2 class="text-4xl font-bold text-slate-900 mt-1">ChatGPT</h2>
+                    <p class="text-xs text-blue-600 font-bold">97% Share</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl shadow-sm">
+                    <p class="text-sm font-medium text-slate-500">Direct Cart Entry</p>
+                    <h2 class="text-4xl font-bold text-slate-900 mt-1">12</h2>
+                    <p class="text-xs text-slate-500">Checkouts & Order pages</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="glass-card p-6 rounded-2xl shadow-sm">
+                    <h3 class="font-semibold text-slate-800 mb-4 text-center">Market Distribution</h3>
+                    <div class="h-64">
+                        <canvas id="regionChart"></canvas>
                     </div>
                 </div>
                 <div class="glass-card p-6 rounded-2xl shadow-sm">
-                    <h3 class="font-bold text-lg text-slate-800 mb-4 border-b pb-2">🚀 US Opportunity</h3>
-                    <div class="bg-blue-600 rounded-xl p-5 text-white">
-                        <p class="text-blue-100 text-sm mb-2">Observation:</p>
-                        <p class="text-lg font-semibold leading-snug">US traffic is almost entirely product-focused (585 sessions total).</p>
-                        <div class="mt-4 pt-4 border-t border-blue-500">
-                            <p class="text-sm italic">"Action: Adapt AU blog templates for US performance queries to build deeper authority."</p>
-                        </div>
+                    <h3 class="font-semibold text-slate-800 mb-4 text-center">Landing Page Mix</h3>
+                    <div class="h-64">
+                        <canvas id="pageTypeChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -191,7 +183,7 @@
         }
 
         window.onload = function() {
-            // Region Chart
+            // Region Chart (1033 vs 585)
             const ctxRegion = document.getElementById('regionChart').getContext('2d');
             new Chart(ctxRegion, {
                 type: 'doughnut',
@@ -216,7 +208,7 @@
             new Chart(ctxPage, {
                 type: 'pie',
                 data: {
-                    labels: ['Product Pages', 'Home/Other'],
+                    labels: ['Product Pages (78%)', 'Research & Other'],
                     datasets: [{
                         data: [1268, 350],
                         backgroundColor: ['#10b981', '#f59e0b'],
